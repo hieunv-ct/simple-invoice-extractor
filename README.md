@@ -25,7 +25,7 @@ This project demonstrates how to:
 
 ### 1. Clone and Setup
 ```bash
-git clone <repository-url>
+git clone https://github.com/hieunv-ct/simple-invoice-extractor.git
 cd simple-invoice-extractor
 pip install -r requirements.txt
 ```
@@ -61,7 +61,7 @@ Required Environment Variables
 - OPENAI_API_KEY: Your OpenAI API key
 
 Optional Configuration
-- OPENAI_API_BASE_URL: Custom OpenAI endpoint (for Azure OpenAI)
+- OPENAI_API_BASE_URL: Custom OpenAI endpoint
 
 📊 Data Structure
 The extractor returns structured JSON with:
