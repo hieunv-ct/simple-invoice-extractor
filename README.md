@@ -2,6 +2,8 @@
 
 A simple demonstration of AI-powered Vietnamese invoice data extraction using OpenAI's GPT-4 Vision API.
 
+> **Note**: This repository was created for an AI hackathon competition and developed within a few hours. There may be some mistakes or areas for improvement. Given more time, the implementation could be refined further.
+
 ## 🎯 Purpose
 
 This project demonstrates how to:
@@ -84,8 +86,7 @@ The extractor returns structured JSON with:
 }
 ```
 
-## 🛠️ Customization
-Modifying Extraction Fields
+### Modifying Extraction Fields
 Edit src/prompts.py to change the JSON structure:
 
 ```python
@@ -97,4 +98,13 @@ VIETNAMESE_INVOICE_PROCESSOR_PROMPT = """
         }
     """
 ```
+
+### Integration with Peakflo System
+When submitting bills to the Peakflo system, input customization is required:
+- **Bill Number Format**: Combine `serial_number` + '.' + `no_number` (e.g., "C22TDN.0000123")
+- **Field Mapping**: All mapping rules and field requirements should be provided by the relevant department
+- **Data Validation**: Ensure extracted data meets Peakflo's specific formatting requirements
+
+### Alternative Solution: Google Document AI
+An alternative approach is to use Google Document AI, which has been tested and shows good performance for Vietnamese invoice extraction. This could be considered as a backup or primary solution depending on requirements.
 
