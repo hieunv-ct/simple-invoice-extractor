@@ -101,7 +101,7 @@ VIETNAMESE_INVOICE_PROCESSOR_PROMPT = """
 
 ### Integration with Peakflo System
 When submitting bills to the Peakflo system, input customization is required:
-- **Bill Number Format**: Combine `serial_number` + '.' + `no_number` (e.g., "C22TDN.0000123")
+- **Combine params**: example for `bill_number`: `serial_number` + '.' + `no` (e.g., "C22TDN.0000123")
 - **Field Mapping**: All mapping rules and field requirements should be provided by the relevant department
 - **Data Validation**: Ensure extracted data meets Peakflo's specific formatting requirements
 
