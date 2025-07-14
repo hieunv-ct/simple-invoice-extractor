@@ -1,0 +1,32 @@
+{
+  "company_info": {
+    "seller_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ DỊCH VỤ MITEK",
+    "seller_tax_code": "0315906729",
+    "seller_address": "271/10 An Dương Vương, Phường 02, Quận 5, Thành Phố Hồ Chí Minh, Việt Nam",
+    "buyer_name": "CÔNG TY TNHH CHỢ TỐT",
+    "buyer_tax_code": "0312120782",
+    "buyer_address": "Tầng 18, Tòa nhà UOA, Số 6 đường Tân Trào, Phường Tân Phú, Quận 7, Thành phố Hồ Chí Minh, Việt Nam"
+  },
+  "invoice_details": {
+    "invoice_number": "00000741",
+    "invoice_date": "26/05/2025",
+    "serial": "1C25TMT",
+    "form_number": null,
+    "currency": "VND"
+  },
+  "financial_info": {
+    "total_amount_before_tax": 5848500,
+    "vat_rate": 10,
+    "vat_amount": 584850,
+    "total_amount_after_tax": 6433350
+  },
+  "items": [
+    {
+      "description": "Phí kết nối (kết cuối) cuộc gọi tổng đài Voice - Brandname tháng 04/2025 - CSKH",
+      "quantity": 1,
+      "unit": "Tháng",
+      "unit_price": 5848500,
+      "amount": 5848500
+    }
+  ]
+}
