@@ -56,6 +56,32 @@ app.py                 # Streamlit interface
 └── Examples           # Sample invoices and outputs
 ```
 
+## 🔄 Extraction Flow
+
+```mermaid
+graph TD
+    A[📄 Upload Invoice] --> B{📋 File Type Check}
+    B -->|Image| D[🖼️ Image Processing]
+    D --> E[📐 Image Resize & Optimization]
+    E --> F[🔤 Base64 Encoding]
+    F --> G[🤖 GPT-4 Vision API Call]
+    G --> H[📝 Vietnamese Prompt Processing]
+    H --> I[🧠 AI Text Recognition & Understanding]
+    I --> J[📊 Structured JSON Extraction]
+    J --> K{✅ Data Validation}
+    K -->|Valid| L[💾 Display Results]
+    K -->|Invalid| M[⚠️ Error Handling]
+    M --> N[🔄 Retry or Manual Review]
+    L --> O[📥 Export Options]
+    O --> P[📄 JSON Download]
+    O --> Q[📊 CSV Download]
+    
+    style A fill:#e1f5fe
+    style G fill:#fff3e0
+    style J fill:#e8f5e8
+    style L fill:#f3e5f5
+```
+
 ## 🔧 Configuration
 Required Environment Variables
 - OPENAI_API_KEY: Your OpenAI API key
