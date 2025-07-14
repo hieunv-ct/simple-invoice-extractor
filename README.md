@@ -99,12 +99,28 @@ VIETNAMESE_INVOICE_PROCESSOR_PROMPT = """
     """
 ```
 
-### Integration with Peakflo System
+## Integration with Peakflo System
 When submitting bills to the Peakflo system, input customization is required:
-- **Combine params**: example for `bill_number`: `serial_number` + '.' + `no` (e.g., "C22TDN.0000123")
+- **Combine params**: example: `bill_number`: `serial_number` + '.' + `no` (e.g., "C22TDN.0000123")
+- **Additional Required Data**: Many fields beyond invoice extraction are needed:
+  - Purchase Order (PO) information
+  - User login details (who creates the bill)
+  - Vendor/supplier master data
+  - Cost center and approval workflows
+  - Payment terms and conditions
 - **Field Mapping**: All mapping rules and field requirements should be provided by the relevant department
 - **Data Validation**: Ensure extracted data meets Peakflo's specific formatting requirements
 
-### Alternative Solution: Google Document AI
+### Complete Workflow Implementation
+During the Hackathon competition, a complete n8n workflow was built that:
+1. **Receives extracted data** from this invoice processor
+2. **Validates data** against business rules and required fields
+3. **Combines data** with additional information (PO, user context, etc.)
+4. **Prepares payload** for Peakflo Bill Creation API
+5. **Handles API calls** and error management
+
+> **Note**: This repository focuses specifically on the **data extraction from images** aspect. The complete workflow including validation, data combination, and API integration steps are not included here to keep the scope focused on the AI extraction capabilities.
+
+## Alternative Solution: Google Document AI
 An alternative approach is to use Google Document AI, which has been tested and shows good performance for Vietnamese invoice extraction. This could be considered as a backup or primary solution depending on requirements.
 
