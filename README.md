@@ -4,7 +4,21 @@ A simple demonstration of AI-powered Vietnamese invoice data extraction using Op
 
 > **Note**: This repository was created for an AI hackathon competition and developed within a few hours. There may be some mistakes or areas for improvement. Given more time, the implementation could be refined further.
 
-## 🎯 Purpose
+## Table of Contents
+
+- [1. Purpose](#1-purpose)
+- [2. Features](#2-features)
+- [3. Quick Start](#3-quick-start)
+- [4. Usage](#4-usage)
+- [5. Architecture](#5-architecture)
+- [6. Extraction Flow](#6-extraction-flow)
+- [7. Configuration](#7-configuration)
+- [8. Data Structure](#8-data-structure)
+- [9. Customization](#9-customization)
+- [10. Integration with Peakflo System](#10-integration-with-peakflo-system)
+- [11. Alternative Solution: Google Document AI](#11-alternative-solution-google-document-ai)
+
+## 1. Purpose
 
 This project demonstrates how to:
 - Extract structured data from Vietnamese invoices (VAT/GTGT)
@@ -13,7 +27,7 @@ This project demonstrates how to:
 - Handle Vietnamese text encoding properly
 - Structure and export extracted data
 
-## ✨ Features
+## 2. Features
 
 - **Multi-format Support**: PDF, PNG, JPG, JPEG
 - **AI-Powered Extraction**: GPT-4 Vision API
@@ -21,7 +35,7 @@ This project demonstrates how to:
 - **Structured Output**: JSON and CSV export
 - **Educational Focus**: Clean, documented code
 
-## 🚀 Quick Start
+## 3. Quick Start
 
 ### 1. Clone and Setup
 ```bash
@@ -41,13 +55,13 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-## 📋 Usage
+## 4. Usage
 - Upload Invoice: Choose a Vietnamese invoice file (PDF or image)
 - Extract Data: Click "Extract Data with AI" button
 - Review Results: View structured data in the interface
 - Export: Download extracted data as JSON or CSV
 
-## 🏗️ Architecture
+## 5. Architecture
 ```
 app.py                 # Streamlit interface
 ├── InvoiceProcessor   # Core extraction logic
@@ -56,7 +70,7 @@ app.py                 # Streamlit interface
 └── Examples           # Sample invoices and outputs
 ```
 
-## 🔄 Extraction Flow
+## 6. Extraction Flow
 
 ```mermaid
 graph TD
@@ -82,14 +96,14 @@ graph TD
     style L fill:#f3e5f5
 ```
 
-## 🔧 Configuration
+## 7. Configuration
 Required Environment Variables
 - OPENAI_API_KEY: Your OpenAI API key
 
 Optional Configuration
 - OPENAI_API_BASE_URL: Custom OpenAI endpoint
 
-📊 Data Structure
+## 8. Data Structure
 The extractor returns structured JSON with:
 ```json
 {
@@ -112,6 +126,8 @@ The extractor returns structured JSON with:
 }
 ```
 
+## 9. Customization
+
 ### Modifying Extraction Fields
 Edit src/prompts.py to change the JSON structure:
 
@@ -125,7 +141,7 @@ VIETNAMESE_INVOICE_PROCESSOR_PROMPT = """
     """
 ```
 
-## 🔗 Integration with Peakflo System
+## 10. Integration with Peakflo System
 When submitting bills to the Peakflo system, input customization is required:
 - **Combine params**: example: `bill_number`: `serial_number` + '.' + `no` (e.g., "C22TDN.0000123")
 - **Additional Required Data**: Many fields beyond invoice extraction are needed:
@@ -147,6 +163,6 @@ During the Hackathon competition, a complete n8n workflow was built that:
 
 > **Note**: This repository focuses specifically on the **data extraction from images** aspect. The complete workflow including validation, data combination, and API integration steps are not included here to keep the scope focused on the AI extraction capabilities.
 
-## 🔄 Alternative Solution: Google Document AI
+## 11. Alternative Solution: Google Document AI
 An alternative approach is to use Google Document AI, which has been tested and shows good performance for Vietnamese invoice extraction. This could be considered as a backup or primary solution depending on requirements.
 
